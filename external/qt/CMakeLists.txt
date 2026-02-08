@@ -10,6 +10,7 @@ add_library(desktop-app::external_qt ALIAS external_qt)
 add_subdirectory(qt_static_plugins)
 
 if (DESKTOP_APP_USE_PACKAGED)
+    find_package(Qt6 REQUIRED COMPONENTS CorePrivate GuiPrivate WidgetsPrivate)
     target_link_libraries(external_qt
     INTERFACE
         Qt::Core
